@@ -4,8 +4,8 @@ Donate link: https://wpastra.com/pro/
 Tags: Elementor,Templates,Gutenberg,Block Editor,Astra Starter Sites
 Requires at least: 6.6
 Requires PHP: 7.4
-Tested up to: 6.7
-Stable tag: 4.4.14
+Tested up to: 6.7.2
+Stable tag: 4.4.15
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -246,6 +246,13 @@ Once your website is generated, you have complete control over its content and l
 6. Use the power of AI with a single click to write copy, proofread, translate content into different languages. Adjust content length and tone seamlessly for maximum appeal.
 
 == Changelog ==
+
+v4.4.15 - 11-March-2025
+- New:
+    - Integrated SureMail plugin for SMTP option in Classic Templates onboarding.
+- Fix:
+    - Resolved an issue where `_load_textdomain_just_in_time` function was incorrectly triggered for the `astra-sites` text domain.
+    - Resolved inaccurate translations for the Estonian language.
 
 v4.4.14 - 24-February-2025
 - Improvement:

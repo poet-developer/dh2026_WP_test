@@ -3,7 +3,7 @@
  * Plugin Name: Starter Templates
  * Plugin URI: https://wpastra.com/
  * Description: Starter Templates is all in one solution for complete starter sites, single page templates, blocks & images. This plugin offers the premium library of ready templates & provides quick access to beautiful Pixabay images that can be imported in your website easily.
- * Version: 4.4.14
+ * Version: 4.4.15
  * Author: Brainstorm Force
  * Author URI: https://www.brainstormforce.com
  * Text Domain: astra-sites
@@ -35,11 +35,11 @@ function astra_sites_php_version_notice() {
  * Set constants.
  */
 if ( ! defined( 'ASTRA_SITES_NAME' ) ) {
-	define( 'ASTRA_SITES_NAME', __( 'Starter Templates', 'astra-sites' ) );
+	define( 'ASTRA_SITES_NAME', 'Starter Templates' );
 }
 
 if ( ! defined( 'ASTRA_SITES_VER' ) ) {
-	define( 'ASTRA_SITES_VER', '4.4.14' );
+	define( 'ASTRA_SITES_VER', '4.4.15' );
 }
 
 if ( ! defined( 'ASTRA_SITES_FILE' ) ) {
@@ -102,7 +102,19 @@ if ( ! class_exists( 'BSF_Quick_Links' ) ) {
 	require_once ASTRA_SITES_DIR . 'inc/lib/bsf-quick-links/class-bsf-quick-links.php';
 }
 
-if ( class_exists( 'BSF_Analytics_Loader' ) && is_callable( 'BSF_Analytics_Loader::get_instance' ) ) {
+add_action( 'init', 'astra_sites_init_bsf_analytics', 5 );
+
+/**
+ * Initializes BSF Analytics.
+ *
+ * @since 4.4.14
+ * @return void
+ */
+function astra_sites_init_bsf_analytics() {
+	if ( ! class_exists( 'BSF_Analytics_Loader' ) || ! is_callable( 'BSF_Analytics_Loader::get_instance' ) ) {
+		return;
+	}
+
 	$bsf_analytics = BSF_Analytics_Loader::get_instance();
 
 	$bsf_analytics->set_entity(

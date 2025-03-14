@@ -256,6 +256,13 @@ function getFeaturePluginList( features, selectedEcommercePlugin ) {
 					init: 'suretriggers/suretriggers.php',
 				} );
 				break;
+			case 'smtp':
+				requiredPlugins.push( {
+					name: 'Suremail',
+					slug: 'suremails',
+					init: 'suremails/suremails.php',
+				} );
+				break;
 			case 'sales-funnels':
 				requiredPlugins.push( {
 					name: 'CartFlows',

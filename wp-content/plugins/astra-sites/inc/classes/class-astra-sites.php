@@ -1514,11 +1514,18 @@ if ( ! class_exists( 'Astra_Sites' ) ) :
 				'page' => 'starter-templates',
 			);
 
+			$astra_site_pro = 'https://wpastra.com/essential-toolkit-pricing/';
+
 			$url = add_query_arg( $arguments, admin_url( 'themes.php' ) );
 
 			$action_links = array(
 				'settings' => '<a href="' . esc_url( $url ) . '" aria-label="' . esc_attr__( 'Get Started', 'astra-sites' ) . '">' . esc_html__( 'Get Started', 'astra-sites' ) . '</a>',
 			);
+
+			// Check if Premium Starter Templates plugin is not active.
+			if ( ! is_plugin_active( 'astra-pro-sites/astra-pro-sites.php' ) && ! file_exists( ASTRA_SITES_DIR . '../astra-pro-sites/astra-pro-sites.php' ) ) {
+				$action_links['pro-link'] = '<a href="' . $astra_site_pro . '" target="_blank" rel="noreferrer" class="astra-sites-plugins-go-pro">' . __( 'Get Premium Templates ', 'astra-sites' ) . '</a>';
+			}
 
 			return array_merge( $action_links, $links );
 		}
@@ -1579,7 +1586,7 @@ if ( ! class_exists( 'Astra_Sites' ) ) :
 				return;
 			}
 
-			if ( 'appearance_page_starter-templates' !== $hook ) {
+			if ( 'appearance_page_starter-templates' !== $hook && 'plugins.php' !== $hook ) {
 				return;
 			}
 

@@ -1677,6 +1677,12 @@ body.loading-content .select-page-builder {
 	margin: 0;
 }
 
+a.astra-sites-plugins-go-pro {
+	color: #dd4f93;
+	text-shadow: -1px 1px 1px #eee;
+	font-weight: bold;
+}
+
 @media ( min-width: 960px ) and ( max-width: 1020px ) {
 	#astra-sites-admin .theme-action-wrap {
 		padding: 5px;

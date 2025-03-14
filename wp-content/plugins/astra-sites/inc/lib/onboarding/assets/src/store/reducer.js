@@ -64,6 +64,17 @@ export const initialState = {
 			icon: 'ecommerce',
 		},
 		{
+			title: __( 'Website Emails & SMTP', 'astra-sites' ),
+			id: 'smtp',
+			description: __(
+				'Get emails from your website (forms, etc)',
+				'astra-sites'
+			),
+			enabled: true,
+			compulsory: false,
+			icon: 'envelope',
+		},
+		{
 			title: __( 'Donations', 'astra-sites' ),
 			id: 'donations',
 			description: __(
